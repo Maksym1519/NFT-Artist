@@ -617,6 +617,18 @@ body.lock {
   }
 }
 @media (min-width: 1025px) and (max-width: 4000px) {
+  .search_wrapper {
+    display: none;
+  }
+  .user_online-mobile {
+    display: none;
+  }
+  .chat_name {
+    display: none;
+  }
+  .user_slider {
+    display: none;
+  }
   .admin_messages-wrapper {
     width: 100%;
     height: 100%;
@@ -634,11 +646,11 @@ body.lock {
     grid-column-end: 3;
   }
   .admin_messages-container .sidebar {
-    min-height: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 34px 28px 85px 36px;
+    padding: 34px 28px 20px 36px;
   }
   .admin_messages-container .sidebar .sidebar_links {
     display: flex;
@@ -675,7 +687,7 @@ body.lock {
     margin-top: 12px;
   }
   .admin_activity {
-    min-height: 100vh;
+    height: 100%;
     background: #212426;
     border-radius: 32px 0px 0px 0px;
     display: grid;
@@ -887,7 +899,353 @@ body.lock {
     opacity: 0.6;
   }
 }
+@media (min-width: 280px) and (max-width: 1024px) {
+  .admin_messages-wrapper {
+    width: 100%;
+    height: 100%;
+    background: #282828;
+    overflow: hidden;
+  }
+  .admin_messages-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .admin_messages-container .sidebar {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 34px 28px 85px 36px;
+    display: none;
+  }
+  .admin_messages-container .sidebar .sidebar_links {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+  }
+  .admin_messages-container .sidebar .sidebar_links .item {
+    display: flex;
+    column-gap: 12px;
+  }
+  .admin_messages-container .sidebar .sidebar_links .item .link {
+    font-family: "Proximanova-regular";
+    font-size: 16px;
+    line-height: 21px;
+    color: #C8D2DC;
+  }
+  .admin_messages-container .sidebar .sidebar_links .item .link:hover {
+    color: #FCFFFF;
+  }
+  .admin_messages-container .sidebar .sidebar_footer {
+    display: flex;
+    flex-direction: column;
+    margin-left: -8px;
+  }
+  .admin_messages-container .sidebar .sidebar_footer .link {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #525960;
+  }
+  .admin_messages-container .sidebar .sidebar_footer .text {
+    font-family: "Proximanova-regular";
+    font-size: 12px;
+    line-height: 20px;
+    color: #C8D2DC;
+    margin-top: 12px;
+  }
+  .admin_activity {
+    min-height: 100vh;
+    background: #1D1F21;
+    border-radius: 32px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+  }
+  .admin_activity .user_list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 7px;
+    padding: 17px 15px 339px 15px;
+    border-right: 1px solid #525960;
+    position: sticky;
+  }
+  .admin_activity .user_list .title {
+    font-family: "Proximanova-bold";
+    font-size: 20px;
+    line-height: 30px;
+    color: #FCFFFF;
+    margin-bottom: 3px;
+  }
+  .admin_activity .user_list .user {
+    display: grid;
+    grid-template-columns: 12.54% 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 9px;
+    background: #2C2F33;
+    padding: 14px 11px 14px 12px;
+    border-radius: 14px;
+  }
+  .admin_activity .user_list .user:hover {
+    background: linear-gradient(94.78deg, rgba(104, 201, 255, 0.1) 9.27%, rgba(209, 181, 255, 0.1) 84.06%);
+  }
+  .admin_activity .user_list .user:hover ._name {
+    background-image: linear-gradient(94.78deg, #68C9FF 9.27%, #D1B5FF 84.06%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .admin_activity .user_list .user .photo {
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  .admin_activity .user_list .user ._name {
+    font-family: "Proximanova-semiBold";
+    font-size: 12px;
+    line-height: 15px;
+    color: #C8D2DC;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  .admin_activity .user_list .user ._time {
+    font-family: "Proximanova-regular";
+    font-size: 12px;
+    line-height: 15px;
+    color: #C8D2DC;
+    opacity: 0.6;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    justify-self: flex-end;
+  }
+  .admin_activity .user_list .user ._info {
+    font-family: "Proximanova-regular";
+    font-size: 14px;
+    line-height: 15px;
+    color: #FCFFFF;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    letter-spacing: -0.01em;
+  }
+  .admin_activity .user_list .search_wrapper {
+    width: 100%;
+    height: 52px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .admin_activity .user_list .search_wrapper .search {
+    width: 100%;
+    height: 100%;
+    background: #212426;
+    border-radius: 12px;
+  }
+  .admin_activity .user_list .search_wrapper .search_pic {
+    position: absolute;
+    top: 50%;
+    left: 22px;
+    transform: translateY(-50%);
+  }
+  .admin_activity .chating {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    padding: 17px 15px 30px 15px;
+  }
+  .admin_activity .chating .chat_name {
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 13px;
+    align-items: center;
+    margin-bottom: 21px;
+  }
+  .admin_activity .chating .chat_name .user_online-mobile {
+    display: none;
+  }
+  .admin_activity .chating .chat_name .title {
+    font-family: "Proximanova-bold";
+    font-size: 20px;
+    line-height: 30px;
+    color: #FCFFFF;
+  }
+  .admin_activity .chating .user_online {
+    display: none;
+    align-items: center;
+    column-gap: 13px;
+  }
+  .admin_activity .chating .user_online .name {
+    font-family: "Proximanova-semiBold";
+    font-size: 16px;
+    line-height: 15px;
+    color: #C8D2DC;
+  }
+  .admin_activity .chating .user_online .dot {
+    margin-right: -10px;
+    margin-left: 10px;
+  }
+  .admin_activity .chating .user_online .info {
+    font-family: "Proximanova-regular";
+    font-size: 12px;
+    line-height: 15px;
+    color: #FCFFFF;
+  }
+  .admin_activity .chating .user_online-mobile {
+    display: flex;
+    align-items: center;
+    column-gap: 22px;
+    padding-left: 15px;
+  }
+  .admin_activity .chating .user_online-mobile .name {
+    font-family: "Proximanova-semiBold";
+    font-size: 16px;
+    line-height: 15px;
+    color: #C8D2DC;
+    min-width: 100%;
+  }
+  .admin_activity .chating .user_online-mobile .info {
+    font-family: "Proximanova-regular";
+    font-size: 12px;
+    line-height: 15px;
+    color: #FCFFFF;
+  }
+  .admin_activity .chating .user_online-mobile .text_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .admin_activity .chating .chat_window {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: 9px;
+    padding-bottom: 8px;
+  }
+  .admin_activity .chating .chat_window .pic {
+    margin-top: 27px;
+  }
+  .admin_activity .chating .chat_window .message {
+    width: 213px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2C2F33;
+    border-radius: 8px;
+    font-family: "Proximanova-regular";
+    font-size: 14px;
+    line-height: 18px;
+    color: #FCFFFF;
+  }
+  .admin_activity .chating .chat_window .text {
+    font-family: "Proximanova-regular";
+    font-size: 12px;
+    line-height: 15px;
+    color: #C8D2DC;
+    opacity: 0.6;
+  }
+  .admin_activity .chating .chat_division {
+    width: 100%;
+    height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #2C2F33;
+    border-top: 1px solid #2C2F33;
+  }
+  .admin_activity .chating .chat_division .text {
+    font-family: "Proximanova-regular";
+    font-size: 12px;
+    line-height: 15px;
+    color: #C8D2DC;
+    opacity: 0.6;
+  }
+  .admin_activity .chating .new_messages {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 23px 0px 0 0px;
+    row-gap: 7px;
+  }
+  .admin_activity .chating .new_messages .message {
+    display: grid;
+    grid-template-columns: 19px auto;
+    grid-template-rows: auto auto;
+    column-gap: 10px;
+    row-gap: 6px;
+    margin-right: 15px;
+  }
+  .admin_activity .chating .new_messages .message._last {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .admin_activity .chating .new_messages .message._last .message_text {
+    background: #2C2F33;
+  }
+  .admin_activity .chating .new_messages .message .photo {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    align-self: flex-end;
+  }
+  .admin_activity .chating .new_messages .message .message_text {
+    width: 299px;
+    height: 96px;
+    font-family: "Proximanova-regular";
+    font-size: 14px;
+    line-height: 18px;
+    color: #FCFFFF;
+    background: #3626EA;
+    border-radius: 8px;
+    padding: 12px 24px;
+  }
+  .admin_activity .chating .new_messages .message .time {
+    font-family: "Proximanova-regular";
+    font-size: 12px;
+    line-height: 15px;
+    color: #C8D2DC;
+    opacity: 0.6;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .admin_activity .chating .new_messages .button_wrapper {
+    width: 100%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px 0 18px;
+    background: #2C2F33;
+    border-radius: 9px;
+    margin-top: 20px;
+  }
+  .admin_activity .chating .new_messages .button_wrapper .button {
+    font-family: "Proximanova-regular";
+    font-size: 16px;
+    line-height: 21px;
+    color: #C8D2DC;
+    opacity: 0.6;
+  }
+  .user_slider {
+    margin-bottom: 7px;
+  }
+  .user_slider .user {
+    margin-right: 0px;
+  }
+  .user_slider ._user_slider-wrapper {
+    width: 100% !important;
+    padding-left: 35px;
+    margin-left: -11px;
+  }
+  .user_slider .user_slide {
+    display: flex !important;
+    justify-content: center !important;
+    margin-right: 3px;
+  }
+}
 @media (min-width: 1025px) and (max-width: 4000px) {
+  .admin_header-mobile {
+    display: none;
+  }
   .admin_header {
     width: 100%;
     display: flex;
@@ -895,6 +1253,53 @@ body.lock {
     align-items: center;
     padding: 17px 32px 17px 34px;
     background: #282828;
+  }
+}
+@media (min-width: 280px) and (max-width: 1024px) {
+  .admin_header {
+    display: none;
+  }
+  .admin_header-mobile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #282828;
+  }
+  .admin_header-mobile .header {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 17px 15px 17px 23px;
+  }
+  .header_menu {
+    display: flex;
+    flex-direction: column;
+    padding-left: 16px;
+    max-height: 0;
+  }
+  .header_menu .item_link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 12px;
+    width: 100%;
+    height: 56px;
+    padding: 0 16px 0 0;
+    border-bottom: 1px solid;
+    border-image-source: linear-gradient(94.78deg, rgba(104, 201, 255, 0.1) 9.27%, rgba(209, 181, 255, 0.1) 84.06%);
+    border-image-slice: 1;
+  }
+  .header_menu .item_link .link:hover {
+    font-size: 18px;
+    background-image: linear-gradient(94.78deg, #68C9FF 9.27%, #D1B5FF 84.06%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .header_menu .item_link .link {
+    font-family: "Proximanova-regular";
+    font-size: 16px;
+    line-height: 21px;
+    color: #C8D2DC;
   }
 }
 .menu-icon {
