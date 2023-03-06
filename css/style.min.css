@@ -216,6 +216,9 @@ body.lock {
 }
 
 @media (min-width: 1025px) and (max-width: 4000px) {
+  .ellipse-375 {
+    display: none;
+  }
   .authorization_wrapper {
     width: 100%;
     height: 100%;
@@ -224,6 +227,25 @@ body.lock {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+  }
+  .authorization_wrapper ._ellipse-left {
+    position: absolute;
+    left: -113px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.7;
+    filter: blur(124.532px);
+    z-index: 0;
+  }
+  .authorization_wrapper ._ellipse-right {
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.7;
+    filter: blur(124.532px);
+    z-index: 0;
   }
   .authorization_container {
     display: flex;
@@ -232,6 +254,7 @@ body.lock {
     width: 55%;
     margin: 0 auto;
     position: relative;
+    z-index: 2;
   }
   .authorization_container .logo {
     max-width: 145px;
@@ -352,6 +375,21 @@ body.lock {
   }
 }
 @media (min-width: 280px) and (max-width: 1024px) {
+  ._ellipse-left {
+    display: none;
+  }
+  ._ellipse-right {
+    display: none;
+  }
+  .ellipse-375 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.7;
+    filter: blur(124.532px);
+    z-index: 0;
+  }
   .authorization_wrapper {
     width: 100%;
     height: 100%;
@@ -361,6 +399,7 @@ body.lock {
     align-items: center;
     padding: 17px 15px 0px 15px;
     justify-content: flex-start;
+    position: relative;
   }
   .authorization_container {
     display: flex;
@@ -369,6 +408,7 @@ body.lock {
     width: 100%;
     margin: 0 auto;
     position: relative;
+    z-index: 2;
   }
   .authorization_container .logo {
     max-width: 145px;
@@ -958,7 +998,7 @@ body.lock {
   .admin_activity {
     min-height: 100vh;
     background: #1D1F21;
-    border-radius: 32px 0px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
     display: flex;
     flex-direction: column;
   }
@@ -1244,6 +1284,9 @@ body.lock {
   }
 }
 @media (min-width: 1025px) and (max-width: 4000px) {
+  .mobile-title {
+    display: none;
+  }
   .size_title {
     display: none;
   }
@@ -1352,6 +1395,9 @@ body.lock {
     line-height: 18px;
     color: #86A8FF;
   }
+  ._order_list .item_order .text_wrapper .wrapper {
+    display: none;
+  }
   ._order_list .item_order .link {
     width: 116px;
     height: 40px;
@@ -1385,7 +1431,7 @@ body.lock {
   }
   ._order_list .mobile-title {
     font-family: "Proximanova-bold";
-    font-size: 26px;
+    font-size: 20px;
     line-height: 30px;
     color: #FCFFFF;
     margin: 17px 0 10px 0;
@@ -1395,7 +1441,7 @@ body.lock {
     grid-template-columns: repeat(7, auto);
     background: #212426;
     padding: 28px 30px 20px 15px;
-    border-radius: 32px 0px 0px 0px;
+    border-radius: 14px 0px 0px 0px;
   }
   ._order_list .header .subtitle {
     font-family: "Proximanova-regular";
@@ -1426,12 +1472,12 @@ body.lock {
     height: 289px;
     display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(6, auto);
+    grid-template-rows: repeat(5, auto);
     align-items: center;
     background: #2C2F33;
-    border-radius: 32px 0px 0px 0px;
-    padding: 22px 19px 19px 18px;
-    margin-bottom: 8px;
+    border-radius: 14px 14px 0px 0px;
+    padding: 18px 19px 8px 18px;
+    margin-bottom: 10px;
   }
   ._order_list .item_order .title {
     font-family: "Proximanova-semiBold";
@@ -1443,13 +1489,16 @@ body.lock {
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
+    align-self: flex-start;
+    margin: 1px 0 0 -120px;
   }
   ._order_list .item_order .color {
-    margin-right: 18px;
+    margin: 0 -18px 0 -4px;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 3;
+    align-self: flex-start;
   }
   ._order_list .item_order .text {
     font-family: "Proximanova-semiBold";
@@ -1460,16 +1509,28 @@ body.lock {
   ._order_list .item_order .text._email {
     margin-right: 8px;
     margin-bottom: 17px;
+    align-self: flex-start;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin: -28px 0 0 46px;
+    font-size: 14px;
+    line-height: 20px;
   }
   ._order_list .item_order .text._size {
-    font-size: 16px;
-    margin-right: 6px;
+    font-size: 14px;
+    line-height: 21px;
+    align-self: flex-start;
+    justify-self: flex-end;
+    margin: -6px 0px 0 0px;
   }
   ._order_list .item_order .size_title {
     font-family: "Proximanova-semiBold";
     font-size: 14px;
     line-height: 21px;
     color: #FCFFFF;
+    margin: -24px 0 0 -1px;
   }
   ._order_list .item_order .text_wrapper {
     display: flex;
@@ -1498,6 +1559,24 @@ body.lock {
     line-height: 18px;
     color: #FCFFFF;
   }
+  ._order_list .item_order .text_wrapper .wrapper {
+    margin: -1px 0 -3px -1px;
+  }
+  ._order_list .item_order .text_wrapper .wrapper .subtitle {
+    font-family: "Proximanova-regular";
+    font-size: 14px;
+    line-height: 15px;
+    color: #FCFFFF;
+    margin-bottom: 7px;
+  }
+  ._order_list .item_order .text_wrapper .wrapper .text_mobile {
+    max-width: 99%;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  ._order_list .item_order .text_wrapper._margin {
+    margin-right: 33px;
+  }
   ._order_list .item_order .link {
     width: 100%;
     height: 40px;
@@ -1515,6 +1594,900 @@ body.lock {
   }
   .sidebar._orders {
     padding-bottom: 34px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 4000px) {
+  .item_order-mobile {
+    display: none;
+  }
+  ._NFT-order-list {
+    width: 100%;
+    height: 100%;
+    border-radius: 32px 0px 0px 0px;
+    background: #212426;
+    padding: 0px 31px 0px 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  ._NFT-order-list .header {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    background: #212426;
+    padding: 25px 30px 20px 17px;
+    justify-content: flex-start;
+    border-radius: 14px 0px 0px 0px;
+    margin-bottom: -3px;
+  }
+  ._NFT-order-list .header .mobile-title {
+    display: none;
+  }
+  ._NFT-order-list .header .subtitle {
+    font-family: "Proximanova-regular";
+    font-size: 14px;
+    line-height: 15px;
+    color: #FCFFFF;
+  }
+  ._NFT-order-list .header .subtitle:first-child {
+    margin-right: 100px;
+  }
+  ._NFT-order-list .header .subtitle:nth-child(2) {
+    margin-right: 296px;
+  }
+  ._NFT-order-list .header .subtitle:nth-child(3) {
+    margin-right: 123px;
+  }
+  ._NFT-order-list .header .subtitle:nth-child(4) {
+    margin-right: 112px;
+  }
+  ._NFT-order-list .header .subtitle:nth-child(5) {
+    margin-right: 0px;
+  }
+  ._NFT-order-list .item_order {
+    border-radius: 14px 0 0 0;
+    padding: 0 31px 0px 26px;
+    grid-template-columns: repeat(5, max-content);
+  }
+  ._NFT-order-list .item_order .product_wrapper {
+    display: flex;
+    align-items: center;
+    margin-right: 48px;
+  }
+  ._NFT-order-list .item_order .product_wrapper .pic {
+    margin-right: 19px;
+  }
+  ._NFT-order-list .item_order .product_wrapper .text {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  ._NFT-order-list .item_order .crypto_wrapper {
+    max-width: 310px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 27px;
+    padding: 14px 26px 14px 16px;
+    background: #212426;
+    border-radius: 13px;
+    margin-top: 10px;
+    margin-right: 28px;
+  }
+  ._NFT-order-list .item_order .crypto_wrapper .text {
+    line-height: 21px;
+  }
+  ._NFT-order-list .item_order .success {
+    width: 103px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Proximanova-bold";
+    font-size: 16px;
+    line-height: 28px;
+    color: #C5FF98;
+    background: rgba(197, 255, 152, 0.1);
+    border-radius: 10px;
+    margin-right: 55px;
+  }
+  ._NFT-order-list .item_order .price {
+    font-family: "Proximanova-bold";
+    font-size: 16px;
+    line-height: 28px;
+    color: #FCFFFF;
+    margin-right: 76px;
+  }
+  ._NFT-order-list .item_order .date {
+    font-family: "Proximanova-regular";
+    font-size: 16px;
+    line-height: 28px;
+    color: #C8D2DC;
+  }
+}
+@media (min-width: 280px) and (max-width: 1024px) {
+  ._NFT-order-list {
+    width: 100%;
+    height: 100%;
+    border-radius: 32px 0px 0px 0px;
+    background: #212426;
+    padding: 0px 15px 0px 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  ._NFT-order-list .header {
+    display: none;
+    grid-template-columns: repeat(5, auto);
+    background: #212426;
+    padding: 25px 30px 20px 17px;
+    justify-content: flex-start;
+    border-radius: 14px 0px 0px 0px;
+    margin-bottom: -3px;
+  }
+  ._NFT-order-list .header .subtitle {
+    font-family: "Proximanova-regular";
+    font-size: 14px;
+    line-height: 15px;
+    color: #FCFFFF;
+  }
+  ._NFT-order-list .header .subtitle:first-child {
+    margin-right: 100px;
+  }
+  ._NFT-order-list .header .subtitle:nth-child(2) {
+    margin-right: 296px;
+  }
+  ._NFT-order-list .header .subtitle:nth-child(3) {
+    margin-right: 123px;
+  }
+  ._NFT-order-list .header .subtitle:nth-child(4) {
+    margin-right: 112px;
+  }
+  ._NFT-order-list .header .subtitle:nth-child(5) {
+    margin-right: 0px;
+  }
+  ._NFT-order-list .item_order {
+    display: none;
+    border-radius: 14px 0 0 0;
+    padding: 19px 15px 17px 15px;
+    grid-template-columns: repeat(1, max-content);
+    grid-template-rows: repeat(4, max-content);
+  }
+  ._NFT-order-list .item_order .product_wrapper {
+    display: flex;
+    align-items: center;
+    margin-right: 48px;
+  }
+  ._NFT-order-list .item_order .product_wrapper .pic {
+    margin-right: 19px;
+  }
+  ._NFT-order-list .item_order .product_wrapper .text {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  ._NFT-order-list .item_order .crypto_wrapper {
+    max-width: 310px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 27px;
+    padding: 14px 26px 14px 16px;
+    background: #212426;
+    border-radius: 13px;
+    margin-top: 10px;
+    margin-right: 28px;
+  }
+  ._NFT-order-list .item_order .crypto_wrapper .text {
+    line-height: 21px;
+  }
+  ._NFT-order-list .item_order .success {
+    width: 103px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Proximanova-bold";
+    font-size: 16px;
+    line-height: 28px;
+    color: #C5FF98;
+    background: rgba(197, 255, 152, 0.1);
+    border-radius: 10px;
+    margin-right: 55px;
+  }
+  ._NFT-order-list .item_order .price {
+    font-family: "Proximanova-bold";
+    font-size: 16px;
+    line-height: 28px;
+    color: #FCFFFF;
+    margin-right: 76px;
+  }
+  ._NFT-order-list .item_order .date {
+    font-family: "Proximanova-regular";
+    font-size: 16px;
+    line-height: 28px;
+    color: #C8D2DC;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  ._NFT-order-list .item_order-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 17px 15px 17px 18px;
+    margin-bottom: 10px;
+    background: #2C2F33;
+    border-radius: 14px;
+  }
+  ._NFT-order-list .item_order-mobile .logo_info {
+    display: flex;
+    align-items: center;
+    column-gap: 14px;
+    border-bottom: 0.5px solid rgba(200, 210, 220, 0.3);
+    padding-bottom: 17px;
+  }
+  ._NFT-order-list .item_order-mobile .text_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  ._NFT-order-list .item_order-mobile .text_wrapper .text {
+    font-family: "Proximanova-semiBold";
+    font-size: 16px;
+    line-height: 21px;
+    color: #FCFFFF;
+  }
+  ._NFT-order-list .item_order-mobile .text_wrapper .date {
+    font-family: "Proximanova-regular";
+    font-size: 14px;
+    line-height: 22px;
+    color: #C8D2DC;
+  }
+  ._NFT-order-list .item_order-mobile .line_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 9px 11px 0;
+    border-bottom: 0.5px solid rgba(200, 210, 220, 0.3);
+  }
+  ._NFT-order-list .item_order-mobile .line_wrapper .text {
+    font-family: "Proximanova-regular";
+    font-size: 14px;
+    line-height: 15px;
+    color: #FCFFFF;
+  }
+  ._NFT-order-list .item_order-mobile .line_wrapper .crypto_wrapper {
+    max-width: 148px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 8px;
+    background: #212426;
+    border-radius: 13px;
+    padding: 0 37px 0 11px;
+  }
+  ._NFT-order-list .item_order-mobile .line_wrapper .crypto_wrapper .text {
+    font-family: "Proximanova-bold";
+    font-size: 12px;
+    line-height: 20px;
+    color: #FCFFFF;
+  }
+  ._NFT-order-list .item_order-mobile .line_wrapper .price {
+    font-family: "Proximanova-bold";
+    font-size: 16px;
+    line-height: 28px;
+    color: #FCFFFF;
+  }
+  ._NFT-order-list .item_order-mobile .line_wrapper._border {
+    border-bottom: none;
+    padding-top: 8px;
+  }
+  ._NFT-order-list .item_order-mobile .success {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Proximanova-bold";
+    font-size: 16px;
+    line-height: 28px;
+    color: #C5FF98;
+    background: rgba(197, 255, 152, 0.1);
+    border-radius: 10px;
+    margin-top: 7px;
+    padding-right: 4px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 4000px) {
+  ._admin-workers-list .header {
+    padding: 28px 30px 20px 17px;
+  }
+  ._admin-workers-list .header .subtitle {
+    font-family: "Proximanova-regular";
+    font-size: 14px;
+    line-height: 15px;
+    color: #FCFFFF;
+  }
+  ._admin-workers-list .header .subtitle:first-child {
+    margin-right: 97px;
+  }
+  ._admin-workers-list .header .subtitle:nth-child(2) {
+    margin-right: 229px;
+  }
+  ._admin-workers-list .header .subtitle:nth-child(3) {
+    margin-right: 379px;
+  }
+  ._admin-workers-list .item_order {
+    padding: 6px 31px 0px 26px;
+    grid-template-columns: repeat(4, max-content);
+  }
+  ._admin-workers-list .item_order .product_wrapper {
+    margin-right: 67px;
+  }
+  ._admin-workers-list .item_order .text-mail {
+    font-family: "Proximanova-semiBold";
+    font-size: 14px;
+    line-height: 21px;
+    color: #FCFFFF;
+    margin-right: 76px;
+  }
+  ._admin-workers-list .item_order .comment_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  ._admin-workers-list .item_order .comment_wrapper .text {
+    font-family: "Proximanova-regular";
+    font-size: 14px;
+    line-height: 21px;
+    color: #FCFFFF;
+    max-width: 406px;
+    margin-right: 32px;
+  }
+  ._admin-workers-list .item_order .comment_wrapper .show-more {
+    font-family: "Proximanova-bold";
+    font-size: 12px;
+    line-height: 18px;
+    color: #86A8FF;
+  }
+  ._admin-workers-list .item_order .plan {
+    width: 116px;
+    height: 40px;
+    background: linear-gradient(94.78deg, #68C9FF 9.27%, #D1B5FF 84.06%);
+    border-radius: 8px;
+    font-family: "Proximanova-bold";
+    font-size: 14px;
+    line-height: 20px;
+    color: #1D1F21;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width: 280px) and (max-width: 1024px) {
+  ._admin-workers-list .header {
+    padding: 17px 15px 10px 15px;
+  }
+  ._admin-workers-list .header .subtitle {
+    font-family: "Proximanova-regular";
+    font-size: 14px;
+    line-height: 15px;
+    color: #FCFFFF;
+  }
+  ._admin-workers-list .header .subtitle:first-child {
+    margin-right: 97px;
+  }
+  ._admin-workers-list .header .subtitle:nth-child(2) {
+    margin-right: 229px;
+  }
+  ._admin-workers-list .header .subtitle:nth-child(3) {
+    margin-right: 379px;
+  }
+  ._admin-workers-list .item_order {
+    padding: 6px 31px 0px 26px;
+    grid-template-columns: repeat(4, max-content);
+  }
+  ._admin-workers-list .item_order .product_wrapper {
+    margin-right: 67px;
+  }
+  ._admin-workers-list .item_order .text-mail {
+    font-family: "Proximanova-semiBold";
+    font-size: 14px;
+    line-height: 21px;
+    color: #FCFFFF;
+    margin-right: 76px;
+  }
+  ._admin-workers-list .item_order .line_wrapper {
+    border-bottom: none;
+  }
+  ._admin-workers-list .item_order .comment_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  ._admin-workers-list .item_order .comment_wrapper .text {
+    font-family: "Proximanova-regular";
+    font-size: 14px;
+    line-height: 21px;
+    color: #FCFFFF;
+    max-width: 406px;
+    margin-right: 32px;
+  }
+  ._admin-workers-list .item_order .comment_wrapper .show-more {
+    font-family: "Proximanova-bold";
+    font-size: 12px;
+    line-height: 18px;
+    color: #86A8FF;
+  }
+  ._admin-workers-list .item_order .plan {
+    width: 116px;
+    height: 40px;
+    background: linear-gradient(94.78deg, #68C9FF 9.27%, #D1B5FF 84.06%);
+    border-radius: 8px;
+    font-family: "Proximanova-bold";
+    font-size: 14px;
+    line-height: 20px;
+    color: #1D1F21;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  ._admin-workers-list .item_order-mobile {
+    padding: 19px 15px 17px 18px;
+  }
+  ._admin-workers-list .item_order-mobile .logo_info {
+    padding-bottom: 13px;
+  }
+  ._admin-workers-list .item_order-mobile .line_wrapper {
+    padding: 15px 0 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: none;
+  }
+  ._admin-workers-list .item_order-mobile .line_wrapper .text {
+    font-family: "Proximanova-regular";
+    font-size: 14px;
+    line-height: 21px;
+    color: #FCFFFF;
+  }
+  ._admin-workers-list .item_order-mobile .line_wrapper .show-more {
+    font-family: "Proximanova-bold";
+    font-size: 12px;
+    line-height: 18px;
+    color: #86A8FF;
+  }
+  ._admin-workers-list .item_order-mobile .plan {
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(94.78deg, #68C9FF 9.27%, #D1B5FF 84.06%);
+    border-radius: 8px;
+    font-family: "Proximanova-bold";
+    font-size: 14px;
+    line-height: 20px;
+    color: #1D1F21;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 4000px) {
+  ._admin-workers-messages .sidebar {
+    padding: 50px 28px 14px 36px;
+  }
+  ._admin-workers-messages .sidebar .sidebar_footer {
+    margin-left: 0;
+  }
+  ._admin-workers-messages .user {
+    position: relative;
+  }
+  ._admin-workers-messages .user::before {
+    content: url("../images/star-active.svg");
+    position: absolute;
+    left: -15px;
+    top: 48%;
+    transform: translateY(-50%);
+    visibility: hidden;
+  }
+  ._admin-workers-messages .user:hover::before {
+    visibility: visible;
+  }
+  ._admin-workers-messages .user:hover {
+    background: linear-gradient(94.78deg, rgba(104, 201, 255, 0.1) 9.27%, rgba(209, 181, 255, 0.1) 84.06%);
+  }
+}
+@media (min-width: 280px) and (max-width: 1024px) {
+  ._admin-workers-messages .sidebar {
+    padding: 0px 0px 0px 0px;
+  }
+  ._admin-workers-messages .sidebar .sidebar_footer {
+    margin-left: 0;
+  }
+  ._admin-workers-messages .user {
+    position: relative;
+  }
+  ._admin-workers-messages .user::before {
+    content: url("../images/star-active.svg");
+    position: absolute;
+    left: -15px;
+    top: 48%;
+    transform: translateY(-50%);
+    visibility: hidden;
+  }
+  ._admin-workers-messages .user:hover::before {
+    visibility: visible;
+  }
+  ._admin-workers-messages .user:hover {
+    background: linear-gradient(94.78deg, rgba(104, 201, 255, 0.1) 9.27%, rgba(209, 181, 255, 0.1) 84.06%);
+  }
+}
+@media (min-width: 1025px) and (max-width: 4000px) {
+  ._admin-statistics_wrapper .statistics-mobile {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-template-rows: 137px;
+    column-gap: 30px;
+    margin-bottom: 16px;
+  }
+  ._admin-statistics_wrapper .statistics-mobile .item {
+    display: flex;
+    flex-direction: column;
+    background: #1D1F21;
+    border-radius: 12px;
+    padding-left: 30px;
+    justify-content: center;
+    height: 100%;
+  }
+  ._admin-statistics_wrapper .statistics-mobile .item .numbers {
+    font-family: "Proximanova-bold";
+    font-size: 36px;
+    line-height: 50px;
+    color: #FCFFFF;
+  }
+  ._admin-statistics_wrapper .statistics-mobile .item .text {
+    font-family: "Proximanova-regular";
+    font-size: 14px;
+    line-height: 21px;
+    color: #C8D2DC;
+  }
+  ._admin-statistics_wrapper .statistics-mobile ._item3 {
+    display: flex;
+    flex-direction: row;
+    column-gap: 21px;
+  }
+  ._admin-statistics_wrapper .statistics-mobile ._item3 .item_info_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+  ._admin-statistics_wrapper .statistics-mobile ._item3 .title {
+    font-family: "Proximanova-bold";
+    font-size: 26px;
+    line-height: 34px;
+    color: #FCFFFF;
+  }
+  ._admin-statistics_wrapper .statistics-mobile ._item3 .text {
+    font-family: "Proximanova-regular";
+    font-size: 14px;
+    line-height: 21px;
+    color: #C8D2DC;
+  }
+  ._admin-statistics_wrapper .statistics-mobile ._item3 .button {
+    width: 116px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Proximanova-bold";
+    font-size: 14px;
+    line-height: 20px;
+    color: #1D1F21;
+    background: linear-gradient(94.78deg, #68C9FF 9.27%, #D1B5FF 84.06%);
+    border-radius: 8px;
+    margin-top: 3px;
+  }
+  ._admin-statistics_wrapper .statistics-mobile ._item3 .img_wrapper {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 15px;
+  }
+  ._admin-statistics_wrapper ._order_list {
+    padding: 32px 22px 0px 23px;
+  }
+  ._admin-statistics_wrapper .sidebar {
+    padding-top: 50px;
+    padding-bottom: 0px;
+  }
+  ._admin-statistics_wrapper .item_order {
+    padding: 3px 12px 2px 25px;
+    margin-bottom: 16px;
+  }
+}
+@media (min-width: 280px) and (max-width: 1024px) {
+  ._admin-statistics_wrapper {
+    background: #282828;
+  }
+  ._admin-statistics_wrapper .statistics-mobile {
+    display: grid;
+    grid-template-columns: repeat(2, 48%);
+    grid-template-rows: auto auto;
+    column-gap: 11px;
+    row-gap: 15px;
+    margin-bottom: 16px;
+    background: #1D1F21;
+  }
+  ._admin-statistics_wrapper .statistics-mobile .item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #212426;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 12px 0;
+    border-radius: 0 0 0 0;
+  }
+  ._admin-statistics_wrapper .statistics-mobile .item .numbers {
+    font-family: "Proximanova-bold";
+    font-size: 16px;
+    line-height: 26px;
+    color: #FCFFFF;
+  }
+  ._admin-statistics_wrapper .statistics-mobile .item .text {
+    font-family: "Proximanova-regular";
+    font-size: 12px;
+    line-height: 21px;
+    color: #C8D2DC;
+    text-align: center;
+  }
+  ._admin-statistics_wrapper .statistics-mobile ._item3 {
+    display: flex;
+    flex-direction: row;
+    column-gap: 41px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding: 6px 0px 6px 23px;
+    border-radius: 12px;
+    background: linear-gradient(94.78deg, rgba(104, 201, 255, 0.1) 9.27%, rgba(209, 181, 255, 0.1) 84.06%);
+  }
+  ._admin-statistics_wrapper .statistics-mobile ._item3 .item_info_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+  ._admin-statistics_wrapper .statistics-mobile ._item3 .title {
+    font-family: "Proximanova-bold";
+    font-size: 26px;
+    line-height: 34px;
+    color: #FCFFFF;
+  }
+  ._admin-statistics_wrapper .statistics-mobile ._item3 .text {
+    font-family: "Proximanova-regular";
+    font-size: 14px;
+    line-height: 21px;
+    color: #C8D2DC;
+  }
+  ._admin-statistics_wrapper .statistics-mobile ._item3 .button {
+    width: 116px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Proximanova-bold";
+    font-size: 14px;
+    line-height: 20px;
+    color: #1D1F21;
+    background: linear-gradient(94.78deg, #68C9FF 9.27%, #D1B5FF 84.06%);
+    border-radius: 8px;
+    margin-top: 12px;
+  }
+  ._admin-statistics_wrapper .statistics-mobile ._item3 .img_wrapper {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 15px;
+  }
+  ._admin-statistics_wrapper ._order_list {
+    padding: 0px 15px 0px 15px;
+    background: #1D1F21;
+    border-radius: 0 0 0 0;
+  }
+  ._admin-statistics_wrapper ._order_list .mobile-title {
+    margin-bottom: 8px;
+  }
+  ._admin-statistics_wrapper .sidebar {
+    padding-top: 50px;
+    padding-bottom: 0px;
+  }
+  ._admin-statistics_wrapper .item_order {
+    padding: 18px 19px 8px 18px;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 4000px) {
+  ._admin-messages-client .sidebar {
+    padding: 34px 28px 20px 36px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 4000px) {
+  .item-mobile {
+    display: none;
+  }
+  ._admin-orders-client-wrapper .header {
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+    background: #212426;
+    padding: 28px 30px 20px 15px;
+    justify-content: flex-start;
+    border-radius: 32px 0px 0px 0px;
+  }
+  ._admin-orders-client-wrapper .header .mobile-title {
+    display: none;
+  }
+  ._admin-orders-client-wrapper .header .subtitle {
+    font-family: "Proximanova-regular";
+    font-size: 14px;
+    line-height: 15px;
+    color: #FCFFFF;
+  }
+  ._admin-orders-client-wrapper .header .subtitle:first-child {
+    margin-right: 21px;
+  }
+  ._admin-orders-client-wrapper .header .subtitle:nth-child(2) {
+    margin-right: 22px;
+  }
+  ._admin-orders-client-wrapper .header .subtitle:nth-child(3) {
+    margin-right: 170px;
+  }
+  ._admin-orders-client-wrapper .header .subtitle:nth-child(4) {
+    margin-right: 90px;
+  }
+  ._admin-orders-client-wrapper .header .subtitle:nth-child(5) {
+    margin-right: 100px;
+  }
+  ._admin-orders-client-wrapper .header .subtitle:nth-child(6) {
+    margin-right: 19px;
+  }
+  ._admin-orders-client-wrapper .header .subtitle:nth-child(7) {
+    margin-right: 74px;
+  }
+  ._admin-orders-client-wrapper .item_order {
+    grid-template-columns: repeat(8, max-content);
+    padding: 0 27px 2px 14px;
+  }
+  ._admin-orders-client-wrapper .item_order .title {
+    margin-right: 36px;
+  }
+  ._admin-orders-client-wrapper .item_order .color {
+    margin-right: 24px;
+  }
+  ._admin-orders-client-wrapper .item_order .text._email {
+    margin-right: 15px;
+  }
+  ._admin-orders-client-wrapper .item_order .text._size {
+    margin-right: 25px;
+  }
+  ._admin-orders-client-wrapper .item_order .text_wrapper {
+    margin-right: 18px;
+  }
+  ._admin-orders-client-wrapper .item_order .success {
+    width: 103px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Proximanova-bold";
+    font-size: 16px;
+    line-height: 28px;
+    color: #C5FF98;
+    background: rgba(197, 255, 152, 0.1);
+    border-radius: 10px;
+    margin-right: 8px;
+  }
+  ._admin-orders-client-wrapper .item_order .link {
+    max-width: 103px;
+  }
+}
+@media (min-width: 280px) and (max-width: 1024px) {
+  ._admin-orders-client-wrapper .item_order {
+    display: none;
+  }
+  ._admin-orders-client-wrapper .item_mobile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #2C2F33;
+    border-radius: 14px;
+    padding: 19px 19px 19px 15px;
+    margin-bottom: 10px;
+  }
+  ._admin-orders-client-wrapper .item_mobile .line_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 8px;
+  }
+  ._admin-orders-client-wrapper .item_mobile .line_wrapper._first-line {
+    padding-bottom: 17px;
+    justify-content: left;
+    align-items: flex-start;
+  }
+  ._admin-orders-client-wrapper .item_mobile .line_wrapper._borders {
+    border-top: 0.01em solid rgba(252, 255, 255, 0.5);
+    border-bottom: 0.01em solid rgba(252, 255, 255, 0.5);
+    height: 45px;
+  }
+  ._admin-orders-client-wrapper .item_mobile .line_wrapper._border {
+    border-bottom: 0.01em solid rgba(252, 255, 255, 0.5);
+    height: 45px;
+  }
+  ._admin-orders-client-wrapper .item_mobile .line_wrapper._columns {
+    padding: 7px 0 17px 0;
+    column-gap: 26px;
+  }
+  ._admin-orders-client-wrapper .item_mobile .line_wrapper .title {
+    font-family: "Proximanova-regular";
+    font-size: 14px;
+    line-height: 15px;
+    color: #FCFFFF;
+  }
+  ._admin-orders-client-wrapper .item_mobile .line_wrapper .text {
+    font-family: "Proximanova-semiBold";
+    font-size: 14px;
+    line-height: 21px;
+    color: #FCFFFF;
+  }
+  ._admin-orders-client-wrapper .item_mobile .line_wrapper .text._color {
+    font-family: "Proximanova-bold";
+    font-size: 16px;
+    line-height: 28px;
+    color: #C5FF98;
+  }
+  ._admin-orders-client-wrapper .item_mobile .line_wrapper .text._color::before {
+    content: url("../images/yellow-dot.svg");
+    margin-right: 8px;
+  }
+  ._admin-orders-client-wrapper .item_mobile .line_wrapper .text_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  ._admin-orders-client-wrapper .item_mobile .line_wrapper .text_wrapper .title {
+    font-family: "Proximanova-semiBold";
+    font-size: 16px;
+    line-height: 21px;
+    color: #FCFFFF;
+  }
+  ._admin-orders-client-wrapper .item_mobile .line_wrapper .text_wrapper .text {
+    font-family: "Proximanova-regular";
+    font-size: 14px;
+    line-height: 21px;
+    color: #FCFFFF;
+  }
+  ._admin-orders-client-wrapper .item_mobile .line_wrapper .column_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  ._admin-orders-client-wrapper .item_mobile .line_wrapper .column_wrapper .title {
+    font-family: "Proximanova-semiBold";
+    font-size: 16px;
+    line-height: 21px;
+    color: #FCFFFF;
+    margin-bottom: 1px;
+  }
+  ._admin-orders-client-wrapper .item_mobile .line_wrapper .column_wrapper .text {
+    font-family: "Proximanova-regular";
+    font-size: 14px;
+    line-height: 19px;
+    color: #FCFFFF;
+  }
+  ._admin-orders-client-wrapper .item_mobile .link {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Proximanova-bold";
+    font-size: 14px;
+    line-height: 20px;
+    color: #1D1F21;
+    background: linear-gradient(94.78deg, #68C9FF 9.27%, #D1B5FF 84.06%);
+    border-radius: 8px;
   }
 }
 @media (min-width: 1025px) and (max-width: 4000px) {
