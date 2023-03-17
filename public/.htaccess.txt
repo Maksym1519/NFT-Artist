@@ -1,66 +1,41 @@
-AddType application/x-javascript .js
-AddType text/css .css
-AddType text/xml .xml
-AddType application/octet-stream .doc .mov .avi .pdf .xls 
-AddType application/vnd.ms-fontobject .eot 
-AddType application/x-font-ttf .ttf
-AddType application/x-font-opentype .otf
-AddType application/x-font-woff .woff
-AddType application/x-font-woff2 .woff2
-AddType image/svg+xml .svg
-
-<ifModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/css text/javascript application/javascript application/x-javascript
-</ifModule>
-
 <ifModule mod_headers.c>
-    #кэшировать html и htm файлы на один день
-    <FilesMatch "\.(html|htm)$">
-        Header set Cache-Control "max-age=43200"
-    </FilesMatch>
-    #кэшировать css, javascript и текстовые файлы на одну неделю
-    <FilesMatch "\.(js|css|txt)$">
-        Header set Cache-Control "max-age=604800"
-    </FilesMatch>
-    #кэшировать флэш и изображения на месяц
-    <FilesMatch "\.(flv|swf|ico|gif|jpg|jpeg|png)$">
-        Header set Cache-Control "max-age=2592000"
-    </FilesMatch>
-    #кэшировать шрифты на месяц
-    <FilesMatch "\.(ttf|woff|woff2|woff|otf|svg|eot)$">
-        Header set Cache-Control "max-age=2592000"
-    </FilesMatch>
-    #отключить кэширование
-    <FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
-        Header unset Cache-Control
-    </FilesMatch>
-</IfModule>
-
-<ifModule mod_expires.c>
-    ExpiresActive On
-    #по умолчанию кэш в 5 секунд
-    ExpiresDefault "access plus 5 seconds"
-    #кэшировать флэш и изображения на месяц
-    ExpiresByType image/x-icon "access plus 2592000 seconds"
-    ExpiresByType image/jpeg "access plus 2592000 seconds"
-    ExpiresByType image/png "access plus 2592000 seconds"
-    ExpiresByType image/gif "access plus 2592000 seconds"
-    ExpiresByType application/x-shockwave-flash "access plus 2592000 seconds"
-    #кэшировать css, javascript и текстовые файлы на одну неделю
-    ExpiresByType text/css "access plus 604800 seconds"
-    ExpiresByType text/javascript "access plus 604800 seconds"
-    ExpiresByType application/javascript "access plus 604800 seconds"
-    ExpiresByType application/x-javascript "access plus 604800 seconds"
-    #кэшировать html и htm файлы на один день
-    ExpiresByType text/html "access plus 43200 seconds"
-    #кэшировать xml файлы на десять минут
-    ExpiresByType application/xhtml+xml "access plus 600 seconds"
-    #кэшировать шрифты на месяц
-    ExpiresByType application/vnd.ms-fontobject "access plus 2592000 seconds"
-    ExpiresByType application/x-font-ttf "access plus 2592000 seconds"
-    ExpiresByType application/x-font-opentype "access plus 2592000 seconds"
-    ExpiresByType application/x-font-woff "access plus 2592000 seconds"
-    ExpiresByType application/x-font-woff2 "access plus 2592000 seconds"
-    ExpiresByType image/svg+xml "access plus 2592000 seconds"
-
+  <filesMatch "\.(ico|jpe?g|png|gif|swf|svg|webp|ttf|otf|woff|woff2|eot|sfnt)$">
+    Header set Cache-Control "max-age=25920000"
+  </filesMatch>
+  <filesMatch "\.(css)$">
+    Header set Cache-Control "max-age=25920000"
+  </filesMatch>
+  <filesMatch "\.(js)$">
+    Header set Cache-Control "max-age=25920000"
+  </filesMatch>
 </ifModule>
+
+<IfModule mod_expires.c>
+ExpiresActive on
+ExpiresByType application/pdf A31557600
+ExpiresByType image/x-icon A31557600
+ExpiresByType image/vnd.microsoft.icon A31557600
+ExpiresByType image/svg+xml A31557600
+ExpiresByType image/jpg A31557600
+ExpiresByType image/jpeg A31557600
+ExpiresByType image/png A31557600
+ExpiresByType image/gif A31557600
+ExpiresByType image/webp A31557600
+ExpiresByType video/ogg A31557600
+ExpiresByType audio/ogg A31557600
+ExpiresByType video/mp4 A31557600
+ExpiresByType video/webm A31557600
+ExpiresByType text/css A31557600
+ExpiresByType text/javascript A31557600
+ExpiresByType application/javascript A31557600
+ExpiresByType application/x-javascript A31557600 
+ExpiresByType application/x-font-ttf A31557600
+ExpiresByType application/x-font-woff A31557600
+ExpiresByType application/font-woff A31557600
+ExpiresByType application/font-woff2 "access 3 day"
+ExpiresByType application/vnd.ms-fontobject A31557600
+ExpiresByType font/ttf A31557600
+ExpiresByType font/otf A31557600
+ExpiresByType font/woff A31557600
+ExpiresByType font/woff2 "access 3 day"
+</IfModule>
