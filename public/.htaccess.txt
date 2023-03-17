@@ -1,3 +1,4 @@
+# BEGIN LBCWpFastestCache
 <FilesMatch "\.(webm|ogg|mp4|ico|pdf|flv|jpg|jpeg|png|gif|webp|js|css|swf|x-html|css|xml|js|woff|woff2|otf|ttf|svg|eot)(\.gz)?$">
 <IfModule mod_expires.c>
 AddType application/font-woff2 .woff2
@@ -31,3 +32,6 @@ Header set Connection keep-alive
 FileETag None
 </IfModule>
 </FilesMatch>
+# END LBCWpFastestCache
+@Maksym1519
+ 
